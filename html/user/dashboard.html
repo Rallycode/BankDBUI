@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The bank UniPay</title>
+    <link rel="stylesheet" href="../../css/user/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100">
+    <div class="flex flex-col min-h-screen">
+        <!-- Navigation bar -->
+        <nav class="bg-blue-500 text-white py-4 px-8">
+            <div class="container mx-auto flex justify-between items-center">
+                <h1 id="dashboard" class="text-2xl font-semibold">Online Banking</h1>
+                <ul class="flex space-x-4">
+                    <li><a id="accounts" class="hover:text-gray-200">Accounts</a></li>
+                    <li><a id="history" class="hover:text-gray-200">View History</a></li>
+                    <li><a id="transfer" class="hover:text-gray-200">Transactions</a></li>
+                    <!-- Inside the navigation bar -->
+                    <li id="settingsLink" class="relative">
+                        <a href="#" class="hover:text-gray-200">Settings</a>
+                        <ul id="dropdownMenu"
+                            class="dropdown-menu absolute right-0 mt-2 text-blue-500 bg-white shadow-md rounded-md p-2 hidden">
+                            <li id="profile" onclick="togglepopup()"><a>Profile</a></li>
+                            <li id="logout"><a href="#">Logout</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+        
+        <!-- Main content area -->
+        <main class="flex-1 container mx-auto py-8">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Account Summary -->
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h2 class="text-xl font-semibold mb-4">Account Summary</h2>
+                    <p class="text-gray-600">You have <span class="font-semibold">2</span> accounts</p>
+                    <div class="flex justify-between mt-4">
+                        <div id="acct-details">
+                            <h3 class="text-lg font-semibold">Savings Account</h3>
+                            <p class="text-gray-600">Balance: $5000</p>
+                        </div>
+                        <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">View Details</button>
+                    </div>
+                </div>
+
+                <!-- Recent Transactions -->
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h2 class="text-xl font-semibold mb-4">Recent Transactions</h2>
+                    <ul>
+                        <li class="border-b border-gray-200 py-2">
+                            <p class="text-gray-600">Electricity Bill Payment - $50</p>
+                            <p class="text-sm text-gray-500">20th April 2024</p>
+                        </li>
+                        <li class="border-b border-gray-200 py-2">
+                            <p class="text-gray-600">Online Shopping - $100</p>
+                            <p class="text-sm text-gray-500">18th April 2024</p>
+                        </li>
+                        <!-- More transactions... -->
+                    </ul>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h2 class="text-xl font-semibold mb-4">Quick Actions</h2>
+                    <ul>
+                        <li><a href="#" class="text-blue-500 hover:text-blue-700">Transfer Money</a></li>
+                        <li><a href="#" class="text-blue-500 hover:text-blue-700">Pay Bills</a></li>
+                        <li><a href="#" class="text-blue-500 hover:text-blue-700">Deposit Money</a></li>
+                        <!-- More actions... -->
+                    </ul>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-blue-500 text-white py-4 px-8 mt-auto">
+            <div class="container mx-auto text-center">
+                <p>&copy; 2024 Online Banking. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+<script src="../../js/user/dashboard.js"></script>
+
+
+</html>

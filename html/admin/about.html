@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The bank UniPay</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .product {
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .product:hover {
+            transform: scale(1.05);
+            opacity: 0.9;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100">
+    <nav class="bg-blue-500 text-white py-4 px-8 flex justify-between items-center">
+        <div class="w-full flex justify-around">
+            <h1 class="text-2xl font-semibold">Admin Dashboard</h1>
+            <button id="aboutBtn"
+                class="dashboard-btn bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-1.5 rounded">About</button>
+            <button id="createAccountBtn"
+                class="dashboard-btn bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-1.5 rounded">Create
+                Account</button>
+            <button id="viewAllAccountsBtn"
+                class="dashboard-btn bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-1.5 rounded">View
+                Account</button>
+            <button id="deleteAccountByIdBtn"
+                class="dashboard-btn bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-1.5 rounded">Funtionality</button>
+
+        </div>
+        <button id="logoutBtn"
+            class="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-1.5 rounded">Logout</button>
+    </nav>
+
+    <div id="app" class="container mx-auto px-4 py-8">
+        <h1 class="text-3xl font-bold mb-4">Financial Products</h1>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div class="product bg-white rounded-lg p-6 shadow-md transition-transform duration-300 hover:shadow-lg"
+                v-for="product in products" :key="product.id">
+                <h2 class="text-xl font-semibold mb-2">{{ product.name }}</h2>
+                <p><strong>Type:</strong> {{ product.type }}</p>
+                <p><strong>Duration:</strong> {{ product.duration }}</p>
+                <p><strong>Interest Rate:</strong> {{ product.interestRate }}%</p>
+                <p><strong>Description:</strong> {{ product.description }}</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                products: [
+                    {
+                        id: 1,
+                        name: 'Personal Loan',
+                        type: 'Loan',
+                        duration: '1-5 years',
+                        interestRate: 9.5,
+                        description: 'Flexible repayment options available.'
+                    },
+                    {
+                        id: 2,
+                        name: 'Fixed Deposit',
+                        type: 'FD Scheme',
+                        duration: '1-10 years',
+                        interestRate: 7.5,
+                        description: 'Guaranteed returns with various maturity options.'
+                    },
+                    {
+                        id: 3,
+                        name: 'Joint Account Savings',
+                        type: 'Savings Account',
+                        duration: 'N/A',
+                        interestRate: 3.5,
+                        description: 'Savings account with multiple account holders.'
+                    },
+                    {
+                        id: 4,
+                        name: 'Senior Citizen Savings Scheme',
+                        type: 'Savings Scheme',
+                        duration: '5 years',
+                        interestRate: 8.0,
+                        description: 'Exclusively for senior citizens, offering higher returns.'
+                    }
+                ]
+            }
+        });
+    </script>
+    <script src="../../js/admin/about.js"></script>
+</body>
+
+</html>
